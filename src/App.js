@@ -2,8 +2,12 @@ import logo from './logo.svg';
 import './App.css';
 
 const number = 5555;
-const singer = { name: 'Dr. Mahfuz', job: 'Singer' }
-const singer2 = { name: 'Eva Rahman', job: 'Singer2' }
+const singers = [
+  {name: 'Dr. Mahfuz', job: 'Singer'},
+  {name: 'Eva Rahman', job: 'Singer2'},
+  {name: 'Agun', job: 'sopno'},
+  {name: 'shuvro', job: 'pathor'}
+]
 
 const singerStyle = {
   color: 'purple',
@@ -11,11 +15,23 @@ const singerStyle = {
 }
 
 function App() {
+  const nayoks = ['Rubel', 'BappaRazDa', 'Kuber', 'Jashim', 'Salman Shah', 'Riyaz', 'Anwar'];
   return (
     <div className="App">
-      <Pesrson name="Rubel" nayika="Moushumi"></Pesrson>
-      <Pesrson name="BappaRaz" nayika="cheka"></Pesrson>
-      <Pesrson name="Kuber" nayika="Kopila"></Pesrson>
+      {
+        nayoks.map(nayok => <li>Name: {nayok}</li>)
+      }
+      {/* {
+        nayoks.map(nayok => <Pesrson name={nayok}></Pesrson>)
+      } */}
+      
+      {
+        singers.map(singer => <Pesrson name={singer.name}></Pesrson>)
+      }
+
+      {/* <Pesrson name={nayoks[0]} nayika="Moushumi"></Pesrson>
+      <Pesrson name={nayoks[1]} nayika="cheka"></Pesrson>
+      <Pesrson name={nayoks[2]} nayika="Kopila"></Pesrson> */}
       <h5>New component. YAY</h5>
       <p>rock mama React mama</p>
       <Friend movie="Shingam" phone="01777"></Friend>
@@ -28,7 +44,7 @@ function Pesrson(props) {
   return (
     <div className='person'>
       <h1>{props.name}</h1>
-      <p>Nayika: {props.nayika}</p>
+      <p>{props.nayika}</p>
     </div>
   );
 }
