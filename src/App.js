@@ -13,33 +13,32 @@ const singerStyle = {
 function App() {
   return (
     <div className="App">
-      <Pesrson></Pesrson>
-      <Pesrson></Pesrson>
-      <Pesrson></Pesrson>
-      <Pesrson></Pesrson>
+      <Pesrson name="Rubel" nayika="Moushumi"></Pesrson>
+      <Pesrson name="BappaRaz" nayika="cheka"></Pesrson>
+      <Pesrson name="Kuber" nayika="Kopila"></Pesrson>
       <h5>New component. YAY</h5>
       <p>rock mama React mama</p>
-      <Friend></Friend>
-      <Friend></Friend>
-      <Friend></Friend>
+      <Friend movie="Shingam" phone="01777"></Friend>
+      <Friend phone="01999"></Friend>
     </div>
   );
 }
 
-function Pesrson() {
+function Pesrson(props) {
   return (
     <div className='person'>
-      <h1>Sakib Al Hasan</h1>
-      <p>Profession: Cricket</p>
+      <h1>{props.name}</h1>
+      <p>Nayika: {props.nayika}</p>
     </div>
   );
 }
 
-function Friend(){
+function Friend(props){
+  // console.log(props);
   return (
     <div className='container'>
-      <h3>Name: Ajay Devgun</h3>
-      <p>Job: maramari</p>
+      <h3>Name: {props.movie}</h3>
+      <p>Phone: {props.phone}</p>
     </div>
   );
 }
